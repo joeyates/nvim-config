@@ -1,18 +1,34 @@
-local packages = require('packages')
+plugins = {}
 
-packages.ensure_packer()
+-- Packages are installed under ~/.local/share/nvim/site/pack/packer/start
 
-require('packer').startup(function(use)
-  packages.install(use)
-end)
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
 
-vim.api.nvim_create_autocmd(
+function plugins.install(arg)
+  ensure_packer()
+
+  vim.api.nvim_create_autocmd(
   "User", {
     pattern = "PackerComplete",
     callback = function(ev)
-      packages.setup()
+      arg.complete()
     end
-  }
-)
+  })
 
-require('packer').install()
+  local packer = require('packer')
+  packer.startup(function(use)
+    arg.register(use)
+  end)
+  packer.install()
+end
+
+return plugins
