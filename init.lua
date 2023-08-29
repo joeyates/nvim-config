@@ -1,6 +1,8 @@
 -- Don't show startup message
 vim.opt.shortmess:append("I")
 
+require('session').setup()
+
 -- Nothing above this line must depend on plugins
 
 require('plugins').install({
