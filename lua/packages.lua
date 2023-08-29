@@ -18,8 +18,13 @@ function packages.install(use)
   use 'wbthomason/packer.nvim'
   use 'ctrlpvim/ctrlp.vim'
   use 'elixir-editors/vim-elixir'
-  use {'svrana/neosolarized.nvim',
+  use {
+    'svrana/neosolarized.nvim',
     requires = {{'tjdevries/colorbuddy.nvim'}}
+  }
+  use {
+    'L3MON4D3/LuaSnip',
+    run = "make install_jsregexp"
   }
 end
 
