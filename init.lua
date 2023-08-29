@@ -22,6 +22,7 @@ require('plugins').install({
     -- This function is called after all packages have been installed
     require('formatting')
     require('display')
+    require('snippets')
     require('keybindings')
   end
 })
