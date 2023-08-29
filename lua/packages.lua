@@ -1,5 +1,7 @@
 packages = {}
 
+-- Packages are installed under ~/.local/share/nvim/site/pack/packer/start
+
 function packages.ensure_packer()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
