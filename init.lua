@@ -1,5 +1,5 @@
-require('display')
-require('formatting')
+-- Don't show startup message
+vim.opt.shortmess:append("I")
 
 -- Nothing above this line must depend on plugins
 
@@ -20,10 +20,8 @@ require('plugins').install({
   end,
   complete = function()
     -- This function is called after all packages have been installed
-    require('neosolarized').setup({
-      comment_italics = true,
-      background_set = true
-    })
+    require('formatting')
+    require('display')
+    require('keybindings')
   end
 })
-require('keybindings')
