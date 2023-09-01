@@ -4,13 +4,6 @@ vim.opt.mouse = ''
 vim.g.mapleader = ' '
 
 -- vim.keymap requires NeoVim 0.7
--- open ctrlp
-vim.keymap.set('n', '<Leader>f', ':CtrlP<CR>')
--- cycle through buffers
-vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
-vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
-vim.keymap.set('n', '<Leader>n', ':bnext<CR>')
-vim.keymap.set('n', '<Leader><Right>', ':bnext<CR>')
 -- clear search highlighting with <Enter>
 vim.keymap.set('n', '<CR>', ':nohlsearch<CR><CR>')
 vim.cmd([[
