@@ -1,3 +1,5 @@
+-- disable mouse
+vim.opt.mouse = ''
 vim.g.mapleader = ' '       -- use Space as the 'leader' key
 
 -- vim.keymap requires NeoVim 0.7
