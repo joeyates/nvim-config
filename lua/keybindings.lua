@@ -21,29 +21,3 @@ vim.cmd([[
 :abbreviate Qa qa
 ]])
 
-local ls = require("luasnip")
-
-vim.api.nvim_set_keymap('i', '<Tab>', '', {
-  callback = function()
-    if ls.expand_or_jumpable() then
-      ls.expand_or_jump()
-    end
-  end,
-  silent = true
-})
-
-vim.api.nvim_set_keymap('i', '<S-Tab>', '', {
-  callback = function()
-    ls.jump(-1)
-  end,
-  silent = true
-})
-
-vim.api.nvim_set_keymap('i', '<C-E>', '', {
-  callback = function()
-    if ls.choice_active() then
-      ls.change_choice(1)
-    end
-  end,
-  silent = true
-})

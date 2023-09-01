@@ -13,16 +13,13 @@ require('plugins').install({
     require('languages').register(use)
     use 'ctrlpvim/ctrlp.vim'
     require('display').register(use)
-    use {
-      'L3MON4D3/LuaSnip',
-      run = "make install_jsregexp"
-    }
+    require('snippets').register(use)
   end,
   configure = function()
     -- This function is called after all packages have been installed
     require('languages').configure()
     require('display').configure()
-    require('snippets')
+    require('snippets').configure()
     require('keybindings')
 
     vim.cmd([[
