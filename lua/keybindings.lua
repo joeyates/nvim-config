@@ -3,7 +3,9 @@ vim.opt.mouse = ''
 vim.g.mapleader = ' '       -- use Space as the 'leader' key
 
 -- vim.keymap requires NeoVim 0.7
+-- open ctrlp
 vim.keymap.set('n', '<Leader>f', ':CtrlP<CR>')
+-- cycle through buffers
 vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
 vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
 vim.keymap.set('n', '<Leader>n', ':bnext<CR>')
