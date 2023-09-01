@@ -16,6 +16,9 @@ vim.keymap.set('n', '<CR>', ':nohlsearch<CR><CR>')
 vim.cmd([[
 " Don't quit vim when using `:q`, just close the current buffer
 :abbreviate q bd
+" Handle case errors
+:abbreviate Q bd
+:abbreviate Qa qa
 ]])
 
 local ls = require("luasnip")
