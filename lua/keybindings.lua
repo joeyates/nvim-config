@@ -8,6 +8,8 @@ vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
 vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
 vim.keymap.set('n', '<Leader>n', ':bnext<CR>')
 vim.keymap.set('n', '<Leader><Right>', ':bnext<CR>')
+-- clear search highlighting with <Enter>
+vim.keymap.set('n', '<CR>', ':nohlsearch<CR><CR>')
 vim.cmd([[
 :abbreviate q bd            " Don't quit vim when using `:q`, just close the current buffer
 ]])
