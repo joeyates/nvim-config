@@ -8,16 +8,17 @@ require('session').setup()
 require('plugins').install({
   register = function(use)
     -- This function registers all packages to be installed
+    require('languages').register(use)
     use 'ctrlpvim/ctrlp.vim'
-    use 'elixir-editors/vim-elixir'
     use 'navarasu/onedark.nvim'
     use {
       'L3MON4D3/LuaSnip',
       run = "make install_jsregexp"
     }
   end,
-  complete = function()
+  configure = function()
     -- This function is called after all packages have been installed
+    require('languages').configure()
     require('formatting')
     require('display')
     require('snippets')

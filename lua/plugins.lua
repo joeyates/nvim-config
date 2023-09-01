@@ -20,7 +20,7 @@ function plugins.install(arg)
   "User", {
     pattern = "PackerComplete",
     callback = function(ev)
-      arg.complete()
+      arg.configure()
     end
   })
 
