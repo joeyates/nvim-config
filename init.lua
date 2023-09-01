@@ -1,8 +1,14 @@
 -- Don't show startup message
-vim.opt.shortmess:append("I")
+vim.opt.shortmess:append('I')
+-- disable mouse
+vim.opt.mouse = ''
+-- use Space as the 'leader' key
+vim.g.mapleader = ' '
 
 require('session').setup()
 require('formatting')
+require('search')
+require('command-aliases')
 require('statusline')
 
 -- Nothing above this line must depend on plugins
@@ -21,6 +27,5 @@ require('plugins').install({
     require('navigation').configure()
     require('display').configure()
     require('snippets').configure()
-    require('keybindings')
   end
 })
