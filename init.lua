@@ -12,7 +12,7 @@ require('plugins').install({
     -- This function registers all packages to be installed
     require('languages').register(use)
     use 'ctrlpvim/ctrlp.vim'
-    use 'navarasu/onedark.nvim'
+    require('display').register(use)
     use {
       'L3MON4D3/LuaSnip',
       run = "make install_jsregexp"
@@ -21,7 +21,7 @@ require('plugins').install({
   configure = function()
     -- This function is called after all packages have been installed
     require('languages').configure()
-    require('display')
+    require('display').configure()
     require('snippets')
     require('keybindings')
 
