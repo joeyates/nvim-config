@@ -2,6 +2,7 @@
 vim.opt.shortmess:append("I")
 
 require('session').setup()
+require('formatting')
 
 -- Nothing above this line must depend on plugins
 
@@ -19,7 +20,6 @@ require('plugins').install({
   configure = function()
     -- This function is called after all packages have been installed
     require('languages').configure()
-    require('formatting')
     require('display')
     require('snippets')
     require('keybindings')
