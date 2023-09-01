@@ -11,10 +11,7 @@ require('plugins').install({
     use 'wbthomason/packer.nvim'
     use 'ctrlpvim/ctrlp.vim'
     use 'elixir-editors/vim-elixir'
-    use {
-      'svrana/neosolarized.nvim',
-      requires = {{'tjdevries/colorbuddy.nvim'}}
-    }
+    use 'navarasu/onedark.nvim'
     use {
       'L3MON4D3/LuaSnip',
       run = "make install_jsregexp"

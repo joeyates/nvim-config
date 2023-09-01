@@ -3,7 +3,10 @@ vim.opt.guicursor = "n-v-c-i:ver25"
 -- Use truecolor
 vim.opt.termguicolors = true
 
-require('neosolarized').setup({
-  comment_italics = true,
-  background_set = true
-})
+-- https://github.com/navarasu/onedark.nvim
+local onedark = require('onedark')
+onedark.setup {
+  -- dark, darker, cool, deep, warm, warmer
+  style = 'warmer'
+}
+onedark.load()
