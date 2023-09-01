@@ -3,6 +3,7 @@ vim.opt.shortmess:append("I")
 
 require('session').setup()
 require('formatting')
+require('statusline')
 
 -- Nothing above this line must depend on plugins
 
@@ -23,7 +24,6 @@ require('plugins').install({
     require('display')
     require('snippets')
     require('keybindings')
-    require('statusline')
 
     vim.cmd([[
       let g:ctrlp_custom_ignore = 'deps'
