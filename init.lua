@@ -1,32 +1,31 @@
 -- Don't show startup message
-vim.opt.shortmess:append("I")
+vim.opt.shortmess:append('I')
+-- disable mouse
+vim.opt.mouse = ''
+-- use Space as the 'leader' key
+vim.g.mapleader = ' '
 
 require('session').setup()
+require('formatting')
+require('search')
+require('command-aliases')
+require('statusline')
 
 -- Nothing above this line must depend on plugins
 
 require('plugins').install({
   register = function(use)
     -- This function registers all packages to be installed
-    use 'wbthomason/packer.nvim'
-    use 'ctrlpvim/ctrlp.vim'
-    use 'elixir-editors/vim-elixir'
-    use 'navarasu/onedark.nvim'
-    use {
-      'L3MON4D3/LuaSnip',
-      run = "make install_jsregexp"
-    }
+    require('languages').register(use)
+    require('navigation').register(use)
+    require('display').register(use)
+    require('snippets').register(use)
   end,
-  complete = function()
+  configure = function()
     -- This function is called after all packages have been installed
-    require('formatting')
-    require('display')
-    require('snippets')
-    require('keybindings')
-    require('statusline')
-
-    vim.cmd([[
-      let g:ctrlp_custom_ignore = 'deps'
-    ]])
+    require('languages').configure()
+    require('navigation').configure()
+    require('display').configure()
+    require('snippets').configure()
   end
 })

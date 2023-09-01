@@ -20,12 +20,13 @@ function plugins.install(arg)
   "User", {
     pattern = "PackerComplete",
     callback = function(ev)
-      arg.complete()
+      arg.configure()
     end
   })
 
   local packer = require('packer')
   packer.startup(function(use)
+    use 'wbthomason/packer.nvim'
     arg.register(use)
   end)
   packer.install()
