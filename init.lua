@@ -26,6 +26,7 @@ require('plugins').install({
     require('display')
     require('snippets')
     require('keybindings')
+    require('statusline')
 
     vim.cmd([[
       let g:ctrlp_custom_ignore = 'deps'
