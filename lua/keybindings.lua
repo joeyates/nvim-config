@@ -1,6 +1,7 @@
 -- disable mouse
 vim.opt.mouse = ''
-vim.g.mapleader = ' '       -- use Space as the 'leader' key
+-- use Space as the 'leader' key
+vim.g.mapleader = ' '
 
 -- vim.keymap requires NeoVim 0.7
 -- open ctrlp
@@ -13,7 +14,8 @@ vim.keymap.set('n', '<Leader><Right>', ':bnext<CR>')
 -- clear search highlighting with <Enter>
 vim.keymap.set('n', '<CR>', ':nohlsearch<CR><CR>')
 vim.cmd([[
-:abbreviate q bd            " Don't quit vim when using `:q`, just close the current buffer
+" Don't quit vim when using `:q`, just close the current buffer
+:abbreviate q bd
 ]])
 
 local ls = require("luasnip")

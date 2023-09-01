@@ -14,11 +14,16 @@ local restore = function()
 end
 
 session.setup = function()
-  vim.opt.sessionoptions:append('winpos')   -- Restore window position
-  vim.opt.sessionoptions:remove('resize')   -- Restore window size
-  vim.opt.sessionoptions:remove('options')  -- Don't save options
-  vim.opt.sessionoptions:remove('help')     -- Don't reload help buffers
-  vim.opt.sessionoptions:remove('blank')    -- Don't reload blank buffers
+  -- Restore window position
+  vim.opt.sessionoptions:append('winpos')
+  -- Restore window size
+  vim.opt.sessionoptions:remove('resize')
+  -- Don't save options
+  vim.opt.sessionoptions:remove('options')
+  -- Don't reload help buffers
+  vim.opt.sessionoptions:remove('help')
+  -- Don't reload blank buffers
+  vim.opt.sessionoptions:remove('blank')
 
   vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
