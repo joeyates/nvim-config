@@ -8,7 +8,6 @@ require('session').setup()
 require('plugins').install({
   register = function(use)
     -- This function registers all packages to be installed
-    use 'wbthomason/packer.nvim'
     use 'ctrlpvim/ctrlp.vim'
     use 'elixir-editors/vim-elixir'
     use 'navarasu/onedark.nvim'
