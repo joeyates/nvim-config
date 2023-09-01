@@ -19,4 +19,8 @@ ls.add_snippets("elixir", {
 		"|il",
 		"|> IO.inspect(label: \"$1\")$0"
 	),
+	ls.parser.parse_snippet(
+		"pi",
+		"IO.inspect($1, label: \"$2\")$0"
+	)
 })
