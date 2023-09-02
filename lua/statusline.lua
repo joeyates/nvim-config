@@ -1,4 +1,5 @@
 local function statusline()
+  -- See `:help statusline`
   local modified = "%m"
   local file_name = "%f"
   local align_right = "%="
