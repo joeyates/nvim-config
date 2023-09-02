@@ -10,7 +10,7 @@ local function statusline()
     modified .. " " .. file_name .. 
     align_right ..
     " (" .. line .. ":" .. column .. ")" ..
-    " " .. filetype
+    " " .. filetype .. " "
 end
 
 vim.opt.statusline = statusline()
