@@ -5,12 +5,11 @@ local function statusline()
   local alignment_separator = "%="
   local line = "%l"
   local column = "%c"
-  local filetype = "%y"
 
   return
     modified .. " " .. file_name .. 
     alignment_separator ..
-    filetype ..
+    "%{&filetype}" ..
     alignment_separator ..
     " (" .. line .. ":" .. column .. ") "
 end
