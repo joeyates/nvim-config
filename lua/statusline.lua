@@ -2,7 +2,6 @@ local function statusline()
   local modified = "%m"
   local file_name = "%f"
   local align_right = "%="
-  local percentage = "%p"
   local line = "%l"
   local column = "%c"
   local filetype = "%y"
@@ -10,7 +9,7 @@ local function statusline()
   return
     modified .. " " .. file_name .. 
     align_right ..
-    percentage .. "%% (" .. line .. ":" .. column .. ")" .. 
+    " (" .. line .. ":" .. column .. ")" ..
     " " .. filetype
 end
 
