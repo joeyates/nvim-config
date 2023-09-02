@@ -4,6 +4,7 @@ local function statusline()
   local file_name = "%f"
   local alignment_separator = "%="
   local line = "%l"
+  local line_count = "%L"
   local column = "%c"
 
   return
@@ -11,7 +12,7 @@ local function statusline()
     alignment_separator ..
     "%{&filetype}" ..
     alignment_separator ..
-    " (" .. line .. ":" .. column .. ") "
+    " (" .. line .. "/" .. line_count .. ":" .. column .. ") "
 end
 
 vim.opt.statusline = statusline()
