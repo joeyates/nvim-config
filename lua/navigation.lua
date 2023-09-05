@@ -26,6 +26,7 @@ function navigation.configure()
   })
   -- search for files
   vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>a', builtin.live_grep, {})
   -- cycle through buffers
   vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
   vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
