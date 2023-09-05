@@ -1,4 +1,4 @@
-local function statusline()
+function statusline()
   -- See `:help statusline`
   local modified = "%m"
   local file_name = "%f"
@@ -15,4 +15,4 @@ local function statusline()
     " (" .. line .. "/" .. line_count .. ":" .. column .. ") "
 end
 
-vim.opt.statusline = statusline()
+vim.opt.statusline = "%!v:lua.statusline()"
