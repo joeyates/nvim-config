@@ -1,14 +1,21 @@
 function statusline()
   -- See `:help statusline`
-  local modified = "%m"
   local file_name = "%f"
   local alignment_separator = "%="
   local line = "%l"
   local line_count = "%L"
   local column = "%c"
 
+  local getbufinfo = vim.fn['getbufinfo']
+  local current = vim.api.nvim_get_current_buf()
+  local info = getbufinfo(current)
+  local modified_marker = ""
+  if info[1]["changed"] == 1 then
+    modified_marker = "*"
+  end
+
   return
-    modified .. " " .. file_name .. 
+    file_name .. modified_marker ..
     alignment_separator ..
     "%{&filetype}" ..
     alignment_separator ..
