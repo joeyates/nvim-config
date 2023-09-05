@@ -33,6 +33,10 @@ function snippets.configure()
     ls.parser.parse_snippet(
       "pi",
       "IO.inspect($1, label: \"$2\")$0"
+    ),
+    ls.parser.parse_snippet(
+      "pv",
+      "IO.puts(\"$1 #{$1}\")$0"
     )
   })
 
