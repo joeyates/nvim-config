@@ -40,6 +40,14 @@ function snippets.configure()
     )
   })
 
+  ls.add_snippets("lua", {
+    -- print a variable name and value
+    ls.parser.parse_snippet(
+      'pv',
+      'print(\"$1: \" .. ${1})$0'
+    )
+  })
+
   vim.api.nvim_set_keymap('i', '<Tab>', '', {
     callback = function()
       if ls.expand_or_jumpable() then
