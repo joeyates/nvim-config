@@ -36,7 +36,7 @@ function snippets.configure()
     ),
     ls.parser.parse_snippet(
       "pv",
-      "IO.puts(\"$1 #{$1}\")$0"
+      "IO.puts(\"$1: #{$1}\")$0"
     )
   })
 
