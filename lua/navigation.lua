@@ -9,17 +9,17 @@ end
 
 function navigation.configure()
   -- https://github.com/nvim-telescope/telescope.nvim
-  local telescope = require("telescope")
+  local telescope = require('telescope')
   local builtin = require('telescope.builtin')
   telescope.setup({
     pickers = {
       find_files = {
         find_command = {
-          "find", ".",
-          "-name", "_build", "-prune", "-o",
-          "-name", "deps", "-prune", "-o",
-          "-name", ".git", "-prune", "-o",
-          "-type", "f", "-print"
+          'find', '.',
+          '-name', '_build', '-prune', '-o',
+          '-name', 'deps', '-prune', '-o',
+          '-name', '.git', '-prune', '-o',
+          '-type', 'f', '-print'
         }
       }
     }

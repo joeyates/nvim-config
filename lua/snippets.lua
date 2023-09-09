@@ -17,30 +17,30 @@ snippets = {}
 function snippets.register(use)
   use { -- keyb
     'L3MON4D3/LuaSnip',
-    run = "make install_jsregexp"
+    run = 'make install_jsregexp'
   }
 end
 
 function snippets.configure()
-  local ls = require("luasnip")
+  local ls = require('luasnip')
 
-  ls.add_snippets("elixir", {
+  ls.add_snippets('elixir', {
     -- pipeline inspect with a label
     ls.parser.parse_snippet(
-      "|il",
-      "|> IO.inspect(label: \"$1\")$0"
+      '|il',
+      '|> IO.inspect(label: \"$1\")$0'
     ),
     ls.parser.parse_snippet(
-      "pi",
-      "IO.inspect($1, label: \"$2\")$0"
+      'pi',
+      'IO.inspect($1, label: \"$2\")$0'
     ),
     ls.parser.parse_snippet(
-      "pv",
-      "IO.puts(\"$1: #{$1}\")$0"
+      'pv',
+      'IO.puts(\"$1: #{$1}\")$0'
     )
   })
 
-  ls.add_snippets("lua", {
+  ls.add_snippets('lua', {
     -- print a variable name and value
     ls.parser.parse_snippet(
       'pv',
