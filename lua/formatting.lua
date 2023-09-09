@@ -10,7 +10,7 @@ vim.opt.autoindent = true
 vim.opt.colorcolumn = "80"
 
 vim.api.nvim_create_autocmd(
-  "FileType",
+  "BufReadPost",
   {
     callback = function(ev)
       -- :help fo-table
