@@ -17,7 +17,7 @@ function statusline()
   return
     file_name .. modified_marker ..
     alignment_separator ..
-    '%{&filetype}' ..
+    ' %{&filetype}' ..
     alignment_separator ..
     ' (' .. line .. '/' .. line_count .. ':' .. column .. ') '
 end
