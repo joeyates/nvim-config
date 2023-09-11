@@ -4,6 +4,11 @@ local session_file = function()
   return vim.fn.getcwd() .. '/.session.nvim'
 end
 
+session.save = function()
+  local file = session_file()
+  vim.cmd('mksession! ' .. file)
+end
+
 local restore = function()
   local file = session_file()
   local exists = vim.fn.filereadable(file)
@@ -34,14 +39,9 @@ session.setup = function()
 
   vim.api.nvim_create_autocmd('VimLeave', {
     callback = function()
-      session.save()
+      save()
     end
   })
-end
-
-session.save = function()
-  local file = session_file()
-  vim.cmd('mksession! ' .. file)
 end
 
 return session
