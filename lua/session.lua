@@ -4,7 +4,7 @@ local session_file = function()
   return vim.fn.getcwd() .. '/.session.nvim'
 end
 
-session.save = function()
+local save = function()
   local file = session_file()
   vim.cmd('mksession! ' .. file)
 end
