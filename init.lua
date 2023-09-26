@@ -1,11 +1,8 @@
 -- Don't show startup message
 vim.opt.shortmess:append('I')
--- disable mouse
-vim.opt.mouse = ''
--- use Space as the 'leader' key
-vim.g.mapleader = ' '
 
 require('session').setup()
+require('interaction')
 require('formatting')
 require('search')
 require('command-aliases')
