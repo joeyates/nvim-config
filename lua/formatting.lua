@@ -22,6 +22,6 @@ local set_buffer_formatting_options = function(ev)
 end
 
 vim.api.nvim_create_autocmd(
-  'BufReadPost,BufNewFile',
+  {'BufReadPost', 'BufNewFile'},
   {callback = set_buffer_formatting_options}
 )
