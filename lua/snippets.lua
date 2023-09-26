@@ -41,11 +41,44 @@ function snippets.configure()
   })
 
   ls.add_snippets('lua', {
+    -- print text
+    ls.parser.parse_snippet(
+      'p',
+      'print("$1")$0'
+    ),
     -- print a variable name and value
     ls.parser.parse_snippet(
       'pv',
       'print(\"$1: \" .. ${1})$0'
     )
+  })
+
+  ls.add_snippets('ruby', {
+    -- print text
+    ls.parser.parse_snippet(
+      'p',
+      'puts "$1"$0'
+    ),
+    -- print a variable's name and inspect its value
+    ls.parser.parse_snippet(
+      'pi',
+      'puts "$1: #{$1.inspect}"$0'
+    ),
+    -- start interactive debugger
+    ls.parser.parse_snippet(
+      'pry',
+      'require "pry-byebug"; binding.pry'
+    ),
+    -- print a message, then a variable's name and value
+    ls.parser.parse_snippet(
+      'pmv',
+      'puts "$1, $2: #{$2}"$0'
+    ),
+    -- print a variable's name and value
+    ls.parser.parse_snippet(
+      'pv',
+      'puts "$1: #{$1}"$0'
+    ),
   })
 
   vim.api.nvim_set_keymap('i', '<Tab>', '', {
