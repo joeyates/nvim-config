@@ -17,8 +17,11 @@ function navigation.configure()
         find_command = {
           'find', '.',
           '-name', '_build', '-prune', '-o',
+          '-name', '.bundle', '-prune', '-o',
           '-name', 'deps', '-prune', '-o',
           '-name', '.git', '-prune', '-o',
+          '-name', 'tmp', '-prune', '-o',
+          '-name', 'vendor', '-prune', '-o',
           '-type', 'f', '-print'
         }
       }
