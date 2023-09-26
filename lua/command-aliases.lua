@@ -4,5 +4,6 @@ vim.cmd([[
   " Handle case errors
   :abbreviate Q bd
   :abbreviate Qa qa
+  :abbreviate W w
 ]])
 
