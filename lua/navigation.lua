@@ -9,6 +9,7 @@ end
 
 function navigation.configure()
   -- https://github.com/nvim-telescope/telescope.nvim
+  -- Configuration: https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes
   local telescope = require('telescope')
   local builtin = require('telescope.builtin')
   telescope.setup({
