@@ -17,6 +17,7 @@ require('plugins').install({
     require('navigation').register(use)
     require('display').register(use)
     require('snippets').register(use)
+    require('notes').register(use)
   end,
   configure = function()
     -- This function is called after all packages have been installed
@@ -24,5 +25,6 @@ require('plugins').install({
     require('navigation').configure()
     require('display').configure()
     require('snippets').configure()
+    require('notes').configure()
   end
 })
