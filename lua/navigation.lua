@@ -31,7 +31,9 @@ function navigation.configure()
   })
   -- search for files
   vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+  -- live_grep and grep_string are configured via telescope.setup.vimgrep_arguments
   vim.keymap.set('n', '<leader>a', builtin.live_grep, {})
+  vim.keymap.set('n', '<leader>A', builtin.grep_string, {})
   -- cycle through buffers
   vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
   vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
