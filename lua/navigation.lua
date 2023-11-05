@@ -20,6 +20,7 @@ function navigation.configure()
           '-name', '_build', '-prune', '-o',
           '-name', '.bundle', '-prune', '-o',
           '-name', 'deps', '-prune', '-o',
+          '-name', 'doc', '-prune', '-o',
           '-name', '.git', '-prune', '-o',
           '-name', 'tmp', '-prune', '-o',
           '-name', 'vendor', '-prune', '-o',
