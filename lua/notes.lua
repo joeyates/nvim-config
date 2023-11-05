@@ -22,6 +22,11 @@ function notes.configure()
             notes = '~/notes'
           }
         }
+      },
+      ['core.keybinds'] = {
+        config = {
+          neorg_leader = '<Leader>o'
+        }
       }
     }
   }
