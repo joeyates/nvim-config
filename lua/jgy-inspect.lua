@@ -29,6 +29,8 @@ function inspect(v, options)
       end
     end
     io.write('}')
+  elseif t == 'function' then
+    io.write('function')
   else
     error('inspect() - unexpected type: ' .. t)
   end
