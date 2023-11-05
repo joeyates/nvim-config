@@ -21,6 +21,8 @@ function display.configure()
   vim.opt.guicursor = "n-v-c-i:ver25"
   -- Use truecolor
   vim.opt.termguicolors = true
+  -- Highlight the line containing the cursor
+  vim.opt.cursorline = true
 
   --[[
   nvim only paints an area that is an exact number of
@@ -63,6 +65,7 @@ function display.configure()
   -- Added to hexdocs theme
   set_colour({name = "NonText", fg = background}) -- Hide the `~` tilde characters after the end of file
   set_colour({name = "Search", fg = background, bg = "#969386"}) -- Search highlight colour
+  set_colour({name = "Cursorline", bg = "#1a2639"}) -- Highlight the cursor line
 end
 
 return display
