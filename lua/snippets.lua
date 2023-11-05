@@ -30,14 +30,46 @@ function snippets.configure()
       '|il',
       '|> IO.inspect(label: \"$1\")$0'
     ),
+    -- show text
+    ls.parser.parse_snippet(
+      'p',
+      'IO.puts(\"$1\")$0'
+    ),
+    -- inspect a variable's value, then show its name
     ls.parser.parse_snippet(
       'pi',
-      'IO.inspect($1, label: \"$2\")$0'
+      'IO.inspect($1, label: \"$1\")$0'
     ),
+    -- inspect a variable's value, then show a message and the variable's name
+    ls.parser.parse_snippet(
+      'pmi',
+      'IO.inspect($1, label: \"$2: $1\")$0'
+    ),
+    -- show a message, then a variable's name, then its value
+    ls.parser.parse_snippet(
+      'pmv',
+      'IO.puts(\"$1, $2: #{$2}\")$0'
+    ),
+    -- insert a breakpoint
+    ls.parser.parse_snippet(
+      'pry',
+      'require IEx; IEx.pry()'
+    ),
+    -- show a variable's name and value
     ls.parser.parse_snippet(
       'pv',
       'IO.puts(\"$1: #{$1}\")$0'
     )
+  })
+
+  ls.add_snippets('heex', {
+    -- inspect a variable
+    ls.parser.parse_snippet(
+      'pi',
+      [[<pre>
+<%= inspect($1) %>$0
+</pre>]]
+    ),
   })
 
   ls.add_snippets('lua', {
@@ -63,6 +95,11 @@ function snippets.configure()
     ls.parser.parse_snippet(
       'pi',
       'puts "$1: #{$1.inspect}"$0'
+    ),
+    -- print a message, then a variable's name and inspect its value
+    ls.parser.parse_snippet(
+      'pmi',
+      'puts "$1, $2: #{$2.inspect}"$0'
     ),
     -- start interactive debugger
     ls.parser.parse_snippet(
