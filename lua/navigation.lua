@@ -1,5 +1,11 @@
 navigation = {}
 
+function find_in_buffer_dir()
+  local builtin = require('telescope.builtin')
+  local utils = require('telescope.utils')
+  builtin.find_files({ cwd = utils.buffer_dir() })
+end
+
 function navigation.register(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -31,6 +37,7 @@ function navigation.configure()
   })
   -- search for files
   vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>F', find_in_buffer_dir, {})
   -- live_grep and grep_string are configured via telescope.setup.vimgrep_arguments
   vim.keymap.set('n', '<leader>a', builtin.live_grep, {})
   vim.keymap.set('n', '<leader>A', builtin.grep_string, {})
