@@ -1,5 +1,13 @@
 display = {}
 
+local set_buffer_colorscheme = function(ev)
+  if vim.bo.filetype == 'elixir' then
+    vim.cmd.colorscheme('elixir-hex-pm')
+  else
+    vim.cmd.colorscheme('kanagawa')
+  end
+end
+
 function display.register(use)
   -- use a treesitter-compatible colorscheme
   use 'rebelot/kanagawa.nvim'
@@ -23,6 +31,11 @@ function display.configure()
   So, the terminal background colour must be set to match
   the nvim theme.
   ]]
+
+  vim.api.nvim_create_autocmd(
+    {'BufEnter'},
+    {callback = set_buffer_colorscheme}
+  )
 end
 
 return display
