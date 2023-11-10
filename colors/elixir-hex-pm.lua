@@ -26,17 +26,22 @@ end
 -- hexdocs background colour is #081221, we use a colour 3% lighter
 local background = "#0a1629"
 set_colour({name = "Normal", bg = background}) -- Set default background color
+set_colour({name = "Boolean", fg = "#66d9ef"}) -- Elixir: true, false
 set_colour({name = "Comment", fg = "#969386"}) -- Elixir: # comment
-set_colour({name = "Constant", fg = "#e6db74"}) -- Elixir: atom
+set_colour({name = "Constant", fg = "#e6db74"}) -- Elixir: Atom
 set_colour({name = "Define", fg = "#66d9ef"}) -- Elixir: 'defmodule'
-set_colour({name = "Identifier", fg = "#a6e22e"}) -- Elixir: function name
+set_colour({name = "Delimiter", fg = "#e6db74"}) -- Elixir: ~p
+set_colour({name = "Identifier", fg = "#a6e22e"}) -- Elixir: '@impl'
+set_colour({name = "Function", fg = "#a6e22e"}) -- Elixir: function name
+set_colour({name = "Number", fg = "#ae81ff"}) -- Elixir: numbers
+set_colour({name = "Operator", fg = "#ff5385"}) -- Elixir: `alias`, `use`
 set_colour({name = "PreProc", fg = "#ff5385"}) -- Elixir: `alias`, `use`
+set_colour({name = "Special", fg = "#e6db74"}) -- Elixir: double quotes, sigils
+set_colour({name = "Statement", fg = "#66d9ef"}) -- Elixir: `|>`, HTML tags in ~H()
+set_colour({name = "String", fg = "#e6db74"}) -- Elixir: String
 set_colour({name = "Title", fg = "#000080", bg = "#a6a6a6", fmt = "bold"}) -- Markdown: header1
 set_colour({name = "Type", fg = "#a6e22e"}) -- Elixir: module name
-set_colour({name = "Statement", fg = "#66d9ef"}) -- Elixir: `|>`, HTML tags in ~H()
-set_colour({name = "Special", fg = "#e6db74"}) -- Elixir: double quotes, sigils
 set_colour({name = "elixirArguments", fg = "#dce1e6"}) -- Elixir: argument
-set_colour({name = "elixirId", fg = "#dce1e6"}) -- Elixir: function name
 set_colour({name = "elixirTupleDelimiter", fg = "#dce1e6"}) -- Elixir: `{}`
 set_colour({name = "elixirListDelimiter", fg = "#dce1e6"}) -- Elixir: `[]`
 -- Added to hexdocs theme
