@@ -43,7 +43,7 @@ function snippets.configure()
     -- inspect a variable's value, then show a message and the variable's name
     ls.parser.parse_snippet(
       'pmi',
-      'IO.inspect($1, label: \"$2: $1\")$0'
+      'IO.inspect($2, label: \"$1: $2\")$0'
     ),
     -- show a message, then a variable's name, then its value
     ls.parser.parse_snippet(
