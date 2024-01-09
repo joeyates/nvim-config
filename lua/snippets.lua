@@ -72,6 +72,27 @@ function snippets.configure()
     ),
   })
 
+  ls.add_snippets('javascript', {
+    -- show a variable's name and value
+    ls.parser.parse_snippet(
+      'pv',
+      'console.log(\'$1\', $1)$0'
+    )
+  })
+
+  ls.add_snippets('typescript', {
+    -- print some text
+    ls.parser.parse_snippet(
+      'p',
+      'console.log(\'$1\')$0'
+    ),
+    -- show a variable's name and value
+    ls.parser.parse_snippet(
+      'pv',
+      'console.log(\'$1\', $1)$0'
+    )
+  })
+
   ls.add_snippets('lua', {
     -- print text
     ls.parser.parse_snippet(
