@@ -27,6 +27,7 @@ function navigation.configure()
           '-name', '.bundle', '-prune', '-o',
           '-name', 'deps', '-prune', '-o',
           '-name', 'doc', '-prune', '-o',
+          '-name', '.elixir_ls', '-prune', '-o',
           '-name', '.git', '-prune', '-o',
           '-name', 'tmp', '-prune', '-o',
           '-name', 'vendor', '-prune', '-o',
