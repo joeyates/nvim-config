@@ -1,10 +1,22 @@
 display = {}
 
-local set_buffer_colorscheme = function(ev)
-  if vim.bo.filetype == 'elixir' then
-    vim.cmd.colorscheme('elixir-hex-pm')
-  else
-    vim.cmd.colorscheme('kanagawa')
+local elixir_options = function(_ev)
+  vim.cmd.colorscheme('elixir-hex-pm')
+end
+
+local markdown_options = function(_ev)
+  vim.cmd.colorscheme('kanagawa')
+end
+
+local filetype_options = {
+  elixir = elixir_options,
+  markdown = markdown_options
+}
+
+local set_filetype_display_options = function(ev)
+  options = filetype_options[vim.bo.filetype]
+  if options then
+    options(ev)
   end
 end
 
@@ -34,7 +46,7 @@ function display.configure()
 
   vim.api.nvim_create_autocmd(
     {'BufEnter'},
-    {callback = set_buffer_colorscheme}
+    {callback = set_filetype_display_options}
   )
 end
 
