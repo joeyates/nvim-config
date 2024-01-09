@@ -30,7 +30,6 @@ function notes.configure()
       }
     }
   }
-  vim.o.conceallevel = 2
 end
 
 return notes

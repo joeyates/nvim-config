@@ -8,9 +8,14 @@ local markdown_options = function(_ev)
   vim.cmd.colorscheme('kanagawa')
 end
 
+local norg_options = function(_ev)
+  vim.o.conceallevel = 2
+end
+
 local filetype_options = {
   elixir = elixir_options,
-  markdown = markdown_options
+  markdown = markdown_options,
+  norg = norg_options
 }
 
 local set_filetype_display_options = function(ev)
@@ -33,6 +38,7 @@ function display.configure()
   -- Highlight the line containing the cursor
   vim.opt.cursorline = true
   vim.cmd.colorscheme('kanagawa')
+  vim.o.conceallevel = 0
 
   --[[
   nvim only paints an area that is an exact number of
