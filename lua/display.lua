@@ -4,17 +4,12 @@ local elixir_options = function(_ev)
   vim.cmd.colorscheme('elixir-hex-pm')
 end
 
-local markdown_options = function(_ev)
-  vim.cmd.colorscheme('kanagawa')
-end
-
 local norg_options = function(_ev)
   vim.o.conceallevel = 2
 end
 
 local filetype_options = {
   elixir = elixir_options,
-  markdown = markdown_options,
   norg = norg_options
 }
 
