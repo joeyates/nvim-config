@@ -15,11 +15,6 @@ function languages.configure()
     highlight = { enable = true }
   }
   -- :TSInstall bash
-
-  vim.api.nvim_create_autocmd(
-    {'BufEnter'},
-    {callback = set_filetype_options}
-  )
 end
 
 return languages
