@@ -29,6 +29,7 @@ function navigation.configure()
           '-name', 'doc', '-prune', '-o',
           '-name', '.elixir_ls', '-prune', '-o',
           '-name', '.git', '-prune', '-o',
+          '-name', 'node_modules', '-prune', '-o',
           '-name', 'tmp', '-prune', '-o',
           '-name', 'vendor', '-prune', '-o',
           '-type', 'f', '-print'
