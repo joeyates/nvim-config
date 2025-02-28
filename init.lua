@@ -1,5 +1,8 @@
 -- Don't show startup message
 vim.opt.shortmess:append('I')
+-- Set the colorscheme as early as possible
+-- to avoid a flash of differently colored text
+vim.cmd.colorscheme('kanagawa')
 
 require('session').setup()
 require('interaction')

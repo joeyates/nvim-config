@@ -2,9 +2,11 @@ display = {}
 
 local elixir_options = function(_ev)
   vim.cmd.colorscheme('elixir-hex-pm')
+  vim.o.conceallevel = 0
 end
 
 local norg_options = function(_ev)
+  vim.cmd.colorscheme('kanagawa')
   vim.o.conceallevel = 2
 end
 
@@ -17,6 +19,9 @@ local set_filetype_display_options = function(ev)
   options = filetype_options[vim.bo.filetype]
   if options then
     options(ev)
+  else
+    vim.cmd.colorscheme('kanagawa')
+    vim.o.conceallevel = 0
   end
 end
 
@@ -26,13 +31,13 @@ function display.register(use)
 end
 
 function display.configure()
+  -- N.B.: The colorscheme is set right at the start of init.lua
   -- show a thin vertical line as a cursor
   vim.opt.guicursor = "n-v-c-i:ver25"
   -- Use truecolor
   vim.opt.termguicolors = true
   -- Highlight the line containing the cursor
   vim.opt.cursorline = true
-  vim.cmd.colorscheme('kanagawa')
   vim.o.conceallevel = 0
 
   --[[
