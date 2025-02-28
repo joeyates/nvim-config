@@ -39,6 +39,8 @@ function display.configure()
   -- Highlight the line containing the cursor
   vim.opt.cursorline = true
   vim.o.conceallevel = 0
+  -- Consider '-' part of identifiers
+  vim.opt.iskeyword:append('-')
 
   --[[
   nvim only paints an area that is an exact number of
