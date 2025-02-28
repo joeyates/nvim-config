@@ -30,6 +30,9 @@ function notes.configure()
       }
     }
   }
+  -- Override colorscheme to make links blue
+  vim.api.nvim_command("highlight @neorg.links.location.url guifg=#5050d0")
+  vim.api.nvim_command("highlight @neorg.anchors.declaration.norg guifg=#5050d0")
 end
 
 return notes
