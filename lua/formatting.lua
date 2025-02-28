@@ -6,8 +6,6 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 -- indent a new line the same amount as the line just typed
 vim.opt.autoindent = true
--- set an 80 column border
-vim.opt.colorcolumn = '80'
 
 local set_buffer_formatting_options = function(ev)
   -- :help fo-table
@@ -19,6 +17,13 @@ local set_buffer_formatting_options = function(ev)
   vim.opt.formatoptions:remove('o')
   -- do not automatically wrap long lines
   vim.opt_local.wrap = false
+
+  -- set a border at the maximum line length
+  if vim.bo.filetype == 'elixir' then
+    vim.opt.colorcolumn = '98'
+  else
+    vim.opt.colorcolumn = '80'
+  end
 end
 
 vim.api.nvim_create_autocmd(
