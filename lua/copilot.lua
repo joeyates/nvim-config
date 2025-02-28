@@ -1,6 +1,7 @@
 copilot = {}
 
 function copilot.register(use)
+  vim.g.copilot_node_command = "~/.asdf/installs/nodejs/21.6.1/bin/node"
   use {'github/copilot.vim', branch = 'release'}
 end
 

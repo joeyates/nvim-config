@@ -12,7 +12,13 @@ function languages.configure()
   -- https://github.com/nvim-treesitter/nvim-treesitter
   configs = require('nvim-treesitter.configs')
   configs.setup {
-    highlight = { enable = true }
+    highlight = { enable = true },
+    ensure_installed = {
+      "eex",
+      "elixir",
+      "erlang",
+      "heex"
+    }
   }
   -- :TSInstall bash
 end
