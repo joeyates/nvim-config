@@ -25,6 +25,30 @@ function snippets.configure()
   local ls = require('luasnip')
 
   ls.add_snippets('elixir', {
+    -- log a variables name and inspected value
+    ls.parser.parse_snippet(
+      'li',
+      'Logger.info("$1: #{inspect($1)}")$0'
+    ),
+    ls.parser.parse_snippet(
+      'lvform',
+      [[
+      <.simple_form for={@form} id=\"${1:name}-form\" phx-change=\"validate\" phx-submit=\"${2:save}\">
+        $0
+        <:actions>
+          <.button phx-disable-with=\"${3:Saving}...\">${4:Save}</.button>
+        </:actions>
+      </.simple_form>
+      ]]
+    ),
+    ls.parser.parse_snippet(
+      'lvinputselect',
+      '<.input field={@form[:${1:field}]} type=\"select\" label=\"${2:Label}\" options={${3:@options}} value={${4:@value}} />'
+    ),
+    ls.parser.parse_snippet(
+      'lvinputtext',
+      '<.input field={@form[:${1:field}]} type=\"text\" label=\"${2:Label}\" />'
+    ),
     -- pipeline inspect with a label
     ls.parser.parse_snippet(
       '|il',
@@ -90,7 +114,31 @@ function snippets.configure()
     ls.parser.parse_snippet(
       'pv',
       'console.log(\'$1\', $1)$0'
-    )
+    ),
+    -- print a message with a variable's name and value
+    ls.parser.parse_snippet(
+      'pmv',
+      'console.log(\'$1: $2\', $2)$0'
+    ),
+  })
+
+
+  ls.add_snippets('typescriptreact', {
+    -- print some text
+    ls.parser.parse_snippet(
+      'p',
+      'console.log(\'$1\')$0'
+    ),
+    -- show a variable's name and value
+    ls.parser.parse_snippet(
+      'pv',
+      'console.log(\'$1\', $1)$0'
+    ),
+    -- print a message with a variable's name and value
+    ls.parser.parse_snippet(
+      'pmv',
+      'console.log(\'$1: $2\', $2)$0'
+    ),
   })
 
   ls.add_snippets('lua', {
