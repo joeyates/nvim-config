@@ -30,3 +30,17 @@ vim.api.nvim_create_autocmd(
   {'BufEnter'},
   {callback = set_buffer_formatting_options}
 )
+
+-- Format Elixir code on save
+local optionally_format = function()
+  if vim.bo.filetype == 'elixir' then
+    filename = vim.api.nvim_buf_get_name(0)
+    os.execute(string.format('mix format %s 2>/dev/null', filename))
+    vim.cmd "checktime"
+  end
+end
+
+vim.api.nvim_create_autocmd(
+  {'BufWritePost'},
+  {callback = optionally_format}
+)
