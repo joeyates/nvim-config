@@ -6,6 +6,11 @@ function find_in_buffer_dir()
   builtin.find_files({ cwd = utils.buffer_dir() })
 end
 
+function grep_string_whole_words()
+  local builtin = require('telescope.builtin')
+  builtin.grep_string({ word_match = '-w' })
+end
+
 function navigation.register(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -42,7 +47,10 @@ function navigation.configure()
   vim.keymap.set('n', '<leader>F', find_in_buffer_dir, {})
   -- live_grep and grep_string are configured via telescope.setup.vimgrep_arguments
   vim.keymap.set('n', '<leader>a', builtin.live_grep, {})
+  -- search for the text under the cursor (including partial matches and case differences)
   vim.keymap.set('n', '<leader>A', builtin.grep_string, {})
+  -- search for the symbol under the cursor (as a whole word, with matching case)
+  vim.keymap.set('n', '<leader>S', grep_string_whole_words, {})
   -- cycle through buffers
   vim.keymap.set('n', '<Leader>p', ':bprevious<CR>')
   vim.keymap.set('n', '<Leader><Left>', ':bprevious<CR>')
